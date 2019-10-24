@@ -22,7 +22,7 @@
     }
 
     .modal-options {
-        display: block flex;
+        display: flex;
         align-items: center;
         justify-content: space-between;
         margin-top: 20px;
@@ -43,6 +43,13 @@
 		line-height: 1;
 		width: 85px;
 		height: 45px;
+    }
+
+    .sum-input {
+        width: 100%;
+        height: 60px;
+        font-size: 30px;
+        text-align: center;
     }
 </style>
 
@@ -73,7 +80,7 @@
         <h2>New payment</h2>
     </div>
     <div>
-        <input type="text" bind:value />
+        <input class="sum-input" type="number" bind:value />
         <div class="modal-options">
             <button class="confirm" on:click={confirmPayment}>✓</button>
             <button class="cancel" on:click={() => {dispatch('close')}}>X</button>

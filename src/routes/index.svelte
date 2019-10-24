@@ -3,16 +3,27 @@
 		margin-top: 20px;
 	}
 
-	.add {
+	.options-container {
 		position: fixed;
-		bottom: 10px;
-		left: 10px;
-		background-color: #4872f0;
-		color: white;
-		font-size: 41px;
-		line-height: 1;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	.options {
+		display: flex;
+		align-items: baseline;
+		justify-content: center;
+	}
+
+	.add {
+		margin-bottom: 20px;
 		width: 85px;
 		height: 45px;
+		font-size: 41px;
+		line-height: 1;
+		background-color: #4872f0;
+		color: white;
 	}
 </style>
 
@@ -66,7 +77,11 @@
 	{/each}
 </div>
 
-<button class="add" on:click={() => { showModal = true; }}>+</button>
+<div class="options-container">
+	<div class="options">
+		<button class="add" on:click={() => { showModal = true; }}>+</button>
+	</div>
+</div>
 
 {#if showModal}
 	<Modal on:close={() => { showModal = false; }} on:paymentConfirmed={(event) => { addPayment(event.detail.value); }} />
